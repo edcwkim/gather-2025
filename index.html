@@ -4,8 +4,147 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>모험의 끝</title>
+    <style>
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        min-height: 100dvh;
+        background-color: transparent;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      main {
+        width: 402px;
+        padding: 40px 16px 16px;
+      }
+
+      h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        font-size: 36px;
+        font-weight: 700;
+        font-family: ui-sans-serif;
+      }
+
+      h1 > span {
+        display: inline-block;
+        width: 56px;
+        color: rgb(14, 14, 14);
+        text-align: center;
+        line-height: 56px;
+      }
+
+      h1 > span.emoji[data-emoji="✈️"] {
+        padding-right: 0.04em;
+      }
+
+      h1 > span.emoji[data-emoji="💥"] {
+        padding-left: 0.06em;
+        font-size: 1.16em;
+      }
+
+      h1 > span.emoji[data-emoji="🚶🏽‍➡️"] {
+        padding-right: 0.01em;
+        padding-bottom: 0.07em;
+        font-size: 1.1em;
+      }
+
+      .meta {
+        margin-top: 16px;
+        text-align: center;
+      }
+
+      .meta > div {
+        color: rgb(52, 52, 52);
+        line-height: 28px;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: system-ui;
+      }
+
+      .meta > div:not(.animate) {
+        visibility: hidden;
+      }
+
+      .meta > div.animate {
+        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.42, 0, 0.58, 1);
+        animation-fill-mode: both, both;
+      }
+
+      @keyframes slide-up-1 {
+        from { transform: translateY(28px); }
+        to   { transform: translateY(0); }
+      }
+
+      @keyframes slide-up-2 {
+        from { transform: translateY(26px); }
+        to   { transform: translateY(0); }
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      .meta > div.animate:nth-of-type(1) {
+        animation-name: slide-up-1, fade-in;
+        animation-duration: 1.2s, 1s;
+        animation-delay: 0.1s, 0.2s;
+      }
+
+      .meta > div.animate:nth-of-type(2) {
+        animation-name: slide-up-2, fade-in;
+        animation-duration: 1.3s, 1s;
+        animation-delay: 0.2s, 0.2s;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <main>
+      <h1>
+        <span data-emoji="✈️">모</span>
+        <span data-emoji="💥">험</span>
+        <span data-emoji="🚶🏽‍➡️">의</span>
+        <span data-emoji="🥳">끝</span>
+      </h1>
+      <div class="meta">
+        <div style="letter-spacing: -0.0078125em;">2025. 12. 31.</div>
+        <div style="letter-spacing: -0.015625em;">서울 어딘가</div>
+      </div>
+    </main>
+    <script>
+      const emojiContainerList = document.querySelectorAll('[data-emoji]')
+      emojiContainerList.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('emoji')
+          el.innerText = el.dataset.emoji
+        }, 775 + i * 475)
+      })
+      setTimeout(() => {
+        document.querySelectorAll('.meta > div').forEach(el => {
+          el.classList.add('animate')
+        })
+      }, 775 + emojiContainerList.length * 475 + 325)
+    </script>
   </body>
 </html>
