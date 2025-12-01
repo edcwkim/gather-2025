@@ -4,12 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>멀리 달리 살았지만</title>
+    <meta name="description" content="오랜만에 만나요.">
+    <meta property="og:site_name" content="멀리 달리 살았지만">
+    <meta property="og:title" content="멀리 달리 살았지만">
+    <meta property="og:description" content="오랜만에 만나요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://2025.edcx.io">
+    <meta property="og:image" content="https://2025.edcx.io/images/og.png">
+    <meta property="og:image:width" content="1260">
+    <meta property="og:image:height" content="660">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=block">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kopubbatang.css">
     <style>
 
+      /* Apple font bugfix */
+      /* This custom declaration should not be used for text other than font-weight: 800 */
+      @font-face {
+        font-family: apple-sd-gothic-neo;
+        font-weight: 800;
+        font-style: normal;
+        src:
+          local('AppleSDGothicNeo-ExtraBold'),
+          local('Apple SD Gothic Neo ExtraBold');
+      }
+
+      .kr-extrabold {
+        font-weight: 800 !important;
+        font-family: apple-sd-gothic-neo, system-ui !important;
+      }
+
+      /* reboot */
       *,
       *::before,
       *::after {
@@ -32,7 +58,7 @@
         word-break: keep-all;
         font-family: system-ui;
         -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
       }
 
       .count {
@@ -102,11 +128,11 @@
       <div style="background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0625));">
         <div id="logistics" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 74px; min-height: 100lvh;">
           <div style="padding-right: 22px; padding-left: 22px; text-align: center;">
-            <div style="margin-right: -10px; display: inline-block; padding: 18px 30px 17px 20px; background-size: 100% 100%; background-image: url('./images/doodle-3a.png'); color: #666; letter-spacing: -0.013em; font-size: 16px; font-weight: 800;">열려 있을 시간</div>
+            <div class="kr-extrabold" style="margin-right: -10px; display: inline-block; padding: 18px 30px 17px 20px; background-size: 100% 100%; background-image: url('./images/doodle-3a.png'); color: #666; letter-spacing: -0.013em; font-size: 16px;">열려 있을 시간</div>
             <div style="margin-top: 17px; color: #111; line-height: 42px; letter-spacing: -0.034em; font-size: 27px; font-family: Gaegu, system-ui;">2025년 12월 31일<br>오후 7시부터 10시 15분까지</div>
           </div>
           <div style="padding-right: 22px; padding-left: 22px; text-align: center;">
-            <div style="margin-right: -30px; display: inline-block; padding: 17px 52px 22px 22px; background-size: 100% 100%; background-image: url('./images/doodle-3b.png'); color: #666; letter-spacing: -0.013em; font-size: 16px; font-weight: 800;">만날 곳</div>
+            <div class="kr-extrabold" style="margin-right: -30px; display: inline-block; padding: 17px 52px 22px 22px; background-size: 100% 100%; background-image: url('./images/doodle-3b.png'); color: #666; letter-spacing: -0.013em; font-size: 16px;">만날 곳</div>
             <div style="margin-top: 17px; color: #111; line-height: 42px; letter-spacing: -0.034em; font-size: 27px; font-family: Gaegu, system-ui;">서울특별시 마포구 동교로23길 40, <a style="color: unset; text-decoration: none; opacity: 0.57;" href="https://map.naver.com/p/entry/place/37438798" target="_blank">공상온도<svg style="margin-left: 2px; width: 14px; height: 14px; vertical-align: 1px; opacity: 0.82;"><use href="#icon-external-link"></svg></a></div>
           </div>
         </div>
